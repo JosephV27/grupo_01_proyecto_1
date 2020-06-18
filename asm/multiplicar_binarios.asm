@@ -9,23 +9,36 @@ num1 BYTE 123
 num2 BYTE 36
 contador BYTE 0 
 resultado WORD 0
-temp BYTE 0
+
 .code 
-main PROC  
-mov aL, num2
+main PROC
+call DumpRegs;
+xor eax, eax
+xor ebx, ebx
+xor ecx, ecx
+xor edx, edx
+mov al, num2
 mov cl, contador 
-mov dx, resultado 
-    .while (cl < 8) 
-        SHR al, 1
-        cmp al, 0
-        JC L1 
+call DumpRegs;
+    .while (cx < 8) 
+        SHR ax, 1 ;  0100 CF = 1
+        call DumpRegs;
+        JNC L2
+
         L1:
+            xor ebx, ebx
             mov bl, num1 
-            SHL bl, cl ; cl = contandor, contador = 7 (SHL num1, 7)  
-            mov temp, bl
-            add dx, word ptr temp ; dx = resultado, resultado + (SHL num1, 5) 
-    inc cx
-    .ENDW
+            call DumpRegs;
+            SHL bx, cl 
+            call DumpRegs;
+            add resultado, bx
+            mov dx, resultado
+            call DumpRegs;
+
+       L2: 
+           NOP
+     inc cx      
+    .ENDW 
 call  DumpRegs ; muestra los registros 
 exit 
 main ENDP 
