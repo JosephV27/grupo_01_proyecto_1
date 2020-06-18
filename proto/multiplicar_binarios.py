@@ -10,6 +10,7 @@ def uint8_mult(num1, num2):
 
 #print(uint8_mult(8, 2))
 # Así es más fácil seleccionar números
+# Tiene nota de 5/5 en prototipo
 mult_1 = 8
 mult_2 = 2
 
