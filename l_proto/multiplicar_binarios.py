@@ -8,4 +8,12 @@ def uint8_mult(num1, num2):
             resultado = resultado + SHL # sum the SHL results
     return bin(resultado)
 
-print(uint8_mult(8, 2))
+#print(uint8_mult(8, 2))
+# Así es más fácil seleccionar números
+mult_1 = 8
+mult_2 = 2
+
+resultado = uint8_mult(mult_1, mult_2)
+
+print(int(resultado,2))
+
