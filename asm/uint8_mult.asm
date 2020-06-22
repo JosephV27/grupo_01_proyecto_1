@@ -2,47 +2,31 @@ include c:\Irvine\Irvine32.inc
 includelib c:\Irvine\Irvine32.lib
 includelib c:\Irvine\Kernel32.lib
 includelib c:\Irvine\user32.lib
- 
- INCLUDE multiplicacion.inc
+include multiplicacion.inc
 
-.data
-multiplicando DWORD ?
-contador DWORD 0 
+.data 
+contador BYTE 0 
 resultado DWORD 0
 
 .code 
-uint8_mult PROC,
-    ptrArreglo:PTR DWORD ; apuntador al arreglo
+uint8_mult PROC, multiplicando:DWORD, multiplicador:DWORD
+mov eax, multiplicador 
+mov cl, contador 
+    .while (ecx < 8)  ; check that contador be less than 8
+        SHR eax, 1 ; make shift right to multiplicador 
+        JNC L2 ; check if the carry flag is not active
 
-push esi 
-
-xor eax, eax
-xor ebx, ebx
-xor ecx, ecx
-xor edx, edx
-
-mov esi,ptrArreglo
-
-mov ebx, [esi] ; agrega a ebx el primer numero del arreglo
-mov eax, [esi+4] ; agrega a eax el segundo el numero del arreglo
-
-mov multiplicando, ebx
-mov ecx, contador 
-    .while (ecx < 8) 
-        SHR eax, 1
-        JNC L2
-
-        L1:
-            xor ebx, ebx
+        L1: 
+            xor ebx, ebx ; clear ebx
             mov ebx, multiplicando 
-            SHL ebx, ecx
-            add resultado, ebx
+            SHL ebx, cl ; make shift left to multiplicando with the number of contador
+            add resultado, ebx ; add the result
             mov edx, resultado
 
        L2: 
            NOP
-     inc ecx     
+     inc ecx ; increase contador
     .ENDW 
-call  DumpRegs ; muestra los registros 
+RET
 uint8_mult ENDP 
 END
