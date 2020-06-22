@@ -2,22 +2,21 @@ include c:\Irvine\Irvine32.inc
 includelib c:\Irvine\Irvine32.lib
 includelib c:\Irvine\Kernel32.lib
 includelib c:\Irvine\user32.lib
-
-INCLUDE multiplicacion.inc
-Tam_Arreglo = 2
+include multiplicacion.inc
 
 .data
-str1 BYTE "Ingrese un numero a multiplicar:  ", 10, 13, 0
-Arreglo DWORD Tam_Arreglo DUP(?)
+num1 DWORD ?
+num2 DWORD ?
 
 .code 
 main PROC 
-	call Clrscr 
+	call DumpRegs
+	INVOKE Pedir_Validar_Numeros
+	mov num1, ebx
+	call DumpRegs
+	mov num2, eax
+	call DumpRegs
 
-	INVOKE PedirNumeros, ADDR str1, ADDR Arreglo, Tam_Arreglo
-	INVOKE uint8_mult, ADDR Arreglo
-
-	 call Crlf 
-	 exit
+	INVOKE ExitProcess, 0
 main ENDP
 END main
