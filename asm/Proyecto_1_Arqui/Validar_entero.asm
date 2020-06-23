@@ -3,6 +3,14 @@ includelib c:\Irvine\Irvine32.lib
 includelib c:\Irvine\Kernel32.lib
 includelib c:\Irvine\user32.lib
 include multiplicacion.inc
+; ------------------------------------------------------
+; Estudiantes: 
+;				Joseph Valenciano
+;				Erick Blanco 
+;				Emmanuel Murillo 
+; ------------------------------------------------------
+
+TITLE Procedimiento para validar numero 8 bits
 
 .data
 error BYTE "El numero que ingreso no esta contemplado entre el 0 y el 255", 10, 13, 0
