@@ -11,7 +11,7 @@ resultado DWORD ?
 
 .code 
 main PROC 
-	INVOKE Pedir_Validar_Numeros ; call the proc Pedir_Validar_Numeros
+	INVOKE Pedir_Numeros ; call the proc Pedir_Validar_Numeros
 	mov multiplicando, ebx ; move the user input to multiplicando
 	mov multiplicador, eax ; move the user input to multiplicador
 	INVOKE uint8_mult, multiplicando, multiplicador ; call the proc uint8_mult
