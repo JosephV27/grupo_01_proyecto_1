@@ -4,10 +4,15 @@ includelib c:\Irvine\Kernel32.lib
 includelib c:\Irvine\user32.lib
 include multiplicacion.inc
 ; ------------------------------------------------------
-; Estudiantes: 
+; Students: 
 ;				Joseph Valenciano
 ;				Erick Blanco 
 ;				Emmanuel Murillo 
+; ------------------------------------------------------
+
+; ------------------------------------------------------
+; input: A number (the result)
+; output: String with the result			
 ; ------------------------------------------------------
 
 TITLE Procedimiento para mostrar resultado

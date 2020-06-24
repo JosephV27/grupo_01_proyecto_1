@@ -4,12 +4,16 @@ includelib c:\Irvine\Kernel32.lib
 includelib c:\Irvine\user32.lib
 include multiplicacion.inc
 ; ------------------------------------------------------
-; Estudiantes: 
+; Students: 
 ;				Joseph Valenciano
 ;				Erick Blanco 
 ;				Emmanuel Murillo 
 ; ------------------------------------------------------
 
+; ------------------------------------------------------
+; input: Nothing
+; output: Two numbers (multiplicando, multiplicador)			
+; ------------------------------------------------------
 TITLE Procedimiento para pedir numeros
 
 .data

@@ -4,10 +4,15 @@ includelib c:\Irvine\Kernel32.lib
 includelib c:\Irvine\user32.lib
 include multiplicacion.inc
 ; ------------------------------------------------------
-; Estudiantes: 
+; Students: 
 ;				Joseph Valenciano
 ;				Erick Blanco 
 ;				Emmanuel Murillo 
+; ------------------------------------------------------
+
+; ------------------------------------------------------
+; input: Number to validate
+; output: The number or the error message			
 ; ------------------------------------------------------
 
 TITLE Procedimiento para validar numero 8 bits
